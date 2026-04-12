@@ -25,11 +25,11 @@ export function MicrophoneButton({ onStartListening, onStopListening, isListenin
   }
 
   return (
-    <div className="flex flex-col items-center justify-center gap-3 sm:gap-4">
+    <div className="flex flex-col items-center justify-center gap-3 sm:gap-4 lg:gap-5">
       <button
         ref={buttonRef}
         onClick={handleClick}
-        className={`relative w-28 h-28 sm:w-32 sm:h-32 rounded-full transition-all duration-300 ${
+        className={`relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 rounded-full transition-all duration-300 ${
           isListening
             ? 'bg-destructive hover:bg-destructive/90 shadow-lg shadow-destructive/50'
             : 'bg-primary hover:bg-primary/90 shadow-lg shadow-primary/50'
@@ -44,9 +44,9 @@ export function MicrophoneButton({ onStartListening, onStopListening, isListenin
         {/* Icon */}
         <div className="relative z-10 flex items-center justify-center w-full h-full">
           {isListening ? (
-            <Square className="w-10 h-10 sm:w-12 sm:h-12 text-destructive-foreground fill-current" strokeWidth={1.5} />
+            <Square className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 text-destructive-foreground fill-current" strokeWidth={1.5} />
           ) : (
-            <Mic className="w-10 h-10 sm:w-12 sm:h-12 text-primary-foreground" strokeWidth={1.5} />
+            <Mic className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 text-primary-foreground" strokeWidth={1.5} />
           )}
         </div>
 
@@ -59,7 +59,7 @@ export function MicrophoneButton({ onStartListening, onStopListening, isListenin
       </button>
 
       {/* Status text */}
-      <p className="text-center text-sm font-medium text-muted-foreground">
+      <p className="text-center text-sm md:text-base font-medium text-muted-foreground">
         {isListening ? 'I am listening...' : 'Tap to speak'}
       </p>
     </div>

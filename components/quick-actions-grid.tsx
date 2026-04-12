@@ -57,11 +57,11 @@ export function QuickActionsGrid({ actions }: QuickActionsGridProps) {
   const itemsToShow = actions || defaultActions
 
   return (
-    <div className="grid grid-cols-2 gap-3 sm:gap-4 w-full max-w-md">
+    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 lg:gap-5 w-full max-w-xs sm:max-w-2xl lg:max-w-3xl">
       {itemsToShow.map((action) => (
         <Link key={action.id} href={action.href}>
           <button
-            className={`w-full h-28 sm:h-32 rounded-2xl border-2 flex flex-col items-center justify-center gap-2 sm:gap-3 transition-all duration-300 hover:shadow-lg px-2 ${
+            className={`w-full h-24 sm:h-28 md:h-32 lg:h-36 rounded-2xl border-2 flex flex-col items-center justify-center gap-2 sm:gap-3 transition-all duration-300 hover:shadow-lg px-2 ${
               action.variant === 'alert'
                 ? 'bg-destructive/10 border-destructive hover:border-destructive/80 hover:shadow-destructive/20'
                 : 'bg-card border-border hover:border-primary hover:shadow-primary/20'
